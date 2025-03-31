@@ -1,0 +1,249 @@
+/* Multi-Step Form Styles */
+.step-form {
+    display: none;
+    opacity: 0;
+    transform: translateX(15px);
+    transition: all 0.3s ease-in-out;
+}
+
+.step-form.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.step-indicator .nav-link {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.step-indicator .nav-link.active {
+    background-color: #0d6efd;
+    color: white;
+    transform: scale(1.05);
+}
+
+.step-indicator .nav-link.completed {
+    background-color: #198754;
+    color: white;
+}
+
+/* Multi-select styles */
+select[multiple] {
+    min-height: 120px;
+}
+
+/* Summary styles */
+#summary dl {
+    margin-bottom: 0;
+}
+
+#summary dt {
+    font-weight: bold;
+}
+
+#summary dd {
+    margin-bottom: 0.5rem;
+}
+
+/* List view styles */
+.action-btn {
+    margin-right: 5px;
+    padding: 0.25rem 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Form Animations */
+.form-control, .form-select {
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Button Animations */
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* Modal Animations */
+.modal.fade .modal-dialog {
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Table Styles */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    border-top: none;
+    background-color: #f8f9fa;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Checkbox Styles */
+.form-check-input {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Alert Animations */
+.alert {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Edit Form Styles */
+.edit-form {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.edit-form::-webkit-scrollbar {
+    width: 8px;
+}
+
+.edit-form::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.edit-form::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.edit-form::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Section Headers */
+h6.text-primary {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+    margin-bottom: 1rem;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group:hover {
+    transform: translateX(5px);
+}
+
+/* Invalid Feedback Animation */
+.invalid-msg {
+    display: none;
+    color: red;
+    animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Table Row Hover Effect */
+.table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+    transform: scale(1.01);
+}
+
+/* Card Styles */
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* Loading State */
+.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    margin-left: 0.5rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Edit Sidebar Styles */
+#editSidebar {
+    width: 400px;
+} 

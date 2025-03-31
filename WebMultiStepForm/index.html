@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="text-center">Multi-Step Form</h2>
+                <div class="d-flex justify-content-end">
+                    <button id="viewListBtn" class="btn btn-primary"><i class="bi bi-list-ul"></i> View List</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="formContainer" class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-pills nav-fill step-indicator">
+                            <li class="nav-item">
+                                <button class="nav-link step-btn active" data-step="1">Personal Info</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link step-btn" data-step="2">Contact Info</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link step-btn" data-step="3">Additional Info</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link step-btn" data-step="4">Interests</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link step-btn" data-step="5">Summary</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <form id="multiStepForm">
+                            <!-- Step 1: Personal Information -->
+                            <div class="step-form active" data-step="1">
+                                <h4>Personal Information</h4>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        placeholder="Enter your name">
+                                    <div class="invalid-msg"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Enter your email">
+                                    <div class="invalid-msg"></div>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Contact Information -->
+                            <div class="step-form" data-step="2">
+                                <h4>Contact Information</h4>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="text" class="form-control" id="phone" name="phone"
+                                        placeholder="Enter your phone number">
+                                    <div class="invalid-msg"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="zipcode" class="form-label">Zipcode</label>
+                                    <input type="text" class="form-control" id="zipcode" name="zipcode"
+                                        placeholder="Enter your zipcode">
+                                    <div class="invalid-msg"></div>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Additional Information -->
+                            <div class="step-form" data-step="3">
+                                <h4>Additional Information</h4>
+                                <div class="mb-3">
+                                    <label for="dob" class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob" name="dob">
+                                    <div class="invalid-msg"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Gender</label>
+                                    <div class="d-flex gap-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender" id="male"
+                                                value="Male">
+                                            <label class="form-check-label" for="male">Male</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender" id="female"
+                                                value="Female">
+                                            <label class="form-check-label" for="female">Female</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender" id="other"
+                                                value="Other">
+                                            <label class="form-check-label" for="other">Other</label>
+                                        </div>
+                                    </div>
+                                    <div class="invalid-msg"></div>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: Interests -->
+                            <div class="step-form" data-step="4">
+                                <h4>Interests</h4>
+                                <div class="mb-3">
+                                    <label for="hobbies" class="form-label">Hobbies</label>
+                                    <select class="form-select" id="hobbies" name="hobbies" multiple>
+                                        <option value="Reading">Reading</option>
+                                        <option value="Sports">Sports</option>
+                                        <option value="Music">Music</option>
+                                        <option value="Cooking">Cooking</option>
+                                        <option value="Travel">Travel</option>
+                                        <option value="Art">Art</option>
+                                        <option value="Gaming">Gaming</option>
+                                    </select>
+                                    <div class="invalid-msg"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="technologies" class="form-label">Technologies</label>
+                                    <select class="form-select" id="technologies" name="technologies" multiple>
+                                        <option value="JavaScript">JavaScript</option>
+                                        <option value="Python">Python</option>
+                                        <option value="Java">Java</option>
+                                        <option value="C#">C#</option>
+                                        <option value="PHP">PHP</option>
+                                        <option value="React">React</option>
+                                        <option value="Angular">Angular</option>
+                                        <option value="Vue">Vue</option>
+                                        <option value="Node.js">Node.js</option>
+                                    </select>
+                                    <div class="invalid-msg"></div>
+                                </div>
+                            </div>
+
+                            <!-- Step 5: Summary -->
+                            <div class="step-form" data-step="5">
+                                <h4>Summary</h4>
+                                <div id="summary" class="p-3 border rounded">
+                                    <!-- Summary content -->
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between mt-4">
+                                <button type="button" class="btn btn-secondary" id="prevBtn" disabled>Previous</button>
+                                <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                                <button type="submit" class="btn btn-success" id="submitBtn"
+                                    style="display: none;">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- List View Container -->
+        <div id="listContainer" class="row mt-4" style="display: none;">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Form Submissions</h4>
+                        <div>
+                            <button id="deleteSelectedBtn" class="btn btn-danger me-2" disabled><i
+                                    class="bi bi-trash"></i> Delete</button>
+                            <button id="backToFormBtn" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Back to
+                                Form</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="selectAll"></th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="submissionsList">
+                                <!-- Table listing content -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Modal -->
+        <div class="modal fade" id="viewModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">View Submission</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="viewModalBody">
+                        <!-- View details content -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Form</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm" class="edit-form">
+                            <div class="row">
+                                <!-- Personal Information -->
+                                <div class="col-md-6 mb-3">
+                                    <h6 class="text-primary">Personal Information</h6>
+                                    <div class="mb-3">
+                                        <label for="edit_name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="edit_name" name="name"
+                                            placeholder="Enter your name">
+                                        <div class="invalid-msg"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit_email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="edit_email" name="email"
+                                            placeholder="Enter your email">
+                                        <div class="invalid-msg"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Contact Information -->
+                                <div class="col-md-6 mb-3">
+                                    <h6 class="text-primary">Contact Information</h6>
+                                    <div class="mb-3">
+                                        <label for="edit_phone" class="form-label">Phone Number</label>
+                                        <input type="text" class="form-control" id="edit_phone" name="phone"
+                                            placeholder="Enter your phone number">
+                                        <div class="invalid-msg"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit_zipcode" class="form-label">Zipcode</label>
+                                        <input type="text" class="form-control" id="edit_zipcode" name="zipcode"
+                                            placeholder="Enter your zipcode">
+                                        <div class="invalid-msg"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Information -->
+                                <div class="col-md-6 mb-3">
+                                    <h6 class="text-primary">Additional Information</h6>
+                                    <div class="mb-3">
+                                        <label for="edit_dob" class="form-label">Date of Birth</label>
+                                        <input type="date" class="form-control" id="edit_dob" name="dob">
+                                        <div class="invalid-msg"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label d-block">Gender</label>
+                                        <div class="d-flex gap-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gender"
+                                                    id="edit_male" value="Male">
+                                                <label class="form-check-label" for="edit_male">Male</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gender"
+                                                    id="edit_female" value="Female">
+                                                <label class="form-check-label" for="edit_female">Female</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gender"
+                                                    id="edit_other" value="Other">
+                                                <label class="form-check-label" for="edit_other">Other</label>
+                                            </div>
+                                        </div>
+                                        <div class="invalid-msg"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Interests -->
+                                <div class="col-md-6 mb-3">
+                                    <h6 class="text-primary">Interests</h6>
+                                    <div class="mb-3">
+                                        <label for="edit_hobbies" class="form-label">Hobbies</label>
+                                        <select class="form-select" id="edit_hobbies" name="hobbies" multiple>
+                                            <option value="Reading">Reading</option>
+                                            <option value="Sports">Sports</option>
+                                            <option value="Music">Music</option>
+                                            <option value="Cooking">Cooking</option>
+                                            <option value="Travel">Travel</option>
+                                            <option value="Art">Art</option>
+                                            <option value="Gaming">Gaming</option>
+                                        </select>
+                                        <div class="invalid-msg"></div>
+                                        <small class="form-text text-muted">Hold Ctrl (or Cmd) to select multiple
+                                            options</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit_technologies" class="form-label">Technologies</label>
+                                        <select class="form-select" id="edit_technologies" name="technologies" multiple>
+                                            <option value="JavaScript">JavaScript</option>
+                                            <option value="Python">Python</option>
+                                            <option value="Java">Java</option>
+                                            <option value="C#">C#</option>
+                                            <option value="PHP">PHP</option>
+                                            <option value="React">React</option>
+                                            <option value="Angular">Angular</option>
+                                            <option value="Vue">Vue</option>
+                                            <option value="Node.js">Node.js</option>
+                                        </select>
+                                        <div class="invalid-msg"></div>
+                                        <small class="form-text text-muted">Hold Ctrl (or Cmd) to select multiple
+                                            options</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="saveEditBtn">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmation Modal -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirm Delete</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
